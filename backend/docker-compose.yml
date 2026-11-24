@@ -1,0 +1,98 @@
+# Enzo for Dockge / TrueNAS (stack name: enzo).
+#
+# In the stack folder put a ".env" file with:
+#   1. everything from the backend .env on the PC (API keys, OLLAMA_HOST, MONGO_URI, ENZO_PASSWORD_HASH, ...)
+#      (the hash has "$" in it - keep it in 'single quotes': ENZO_PASSWORD_HASH='pbkdf2...')
+#   3. TRUSTED_PROXIES=192.168.1.10   and   ALLOWED_ORIGINS=https://enzo.example.com,https://enzo.example.com:4444
+#   4. FREELLM_ENCRYPTION_KEY=<64 hex chars, make it once with: openssl rand -hex 32>  (the free backup brain below;
+#      keep it forever: it locks the provider keys saved in the router)
+#
+# Nginx Proxy Manager forwards  enzo.example.com  ->  http://192.168.1.10:8765  (Websockets on).
+# Data (sessions, Google token, history) lives in ./data next to this file.
+
+services:
+  enzo:
+    image: enzo:latest
+    build:
+      context: ..                 # the repository root (backend/ + frontend/)
+      dockerfile: backend/Dockerfile
+    container_name: enzo-web
+    restart: unless-stopped
+    command: python server.py
+    ports:
+      - "8765:8765"
+    env_file:
+      - .env
+    environment:
+      TZ: Asia/Jerusalem
+      HOST_LABEL: the NAS            # Enzo reads itself: "disk / RAM / CPU" describe the NAS
+      SYSINFO_DISK_PATHS: /storage
+      KOKORO_URL: http://kokoro:8880   # free voice (the kokoro service below)
+      KOKORO_VOICE: am_price_inno      # The user picked it from samples (American man)
+      KOKORO_SPEED: "1.2"              # 1.0 sounded too slow to him
+    volumes:
+      - ./data:/app/data
+      - ./backups:/app/backups       # nightly zip of data/, newest 14 kept (agent/backup.py)
+      - /mnt/storage:/storage:ro     # NAS pool, read-only, for disk-space answers and alerts
+
+  enzo-telegram:
+    image: enzo:latest
+    pull_policy: never          # built by the enzo service above; never pulled from a registry
+    container_name: enzo-telegram
+    restart: unless-stopped
+    depends_on:
+      - enzo
+    command: python telegram_bot.py
+    healthcheck:                # not the web port: the bot touches data/telegram_alive every 30 s
+      test: ["CMD", "python", "-c", "import os,sys,time; sys.exit(0 if time.time()-os.path.getmtime('/app/data/telegram_alive')<120 else 1)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+      retries: 3
+    env_file:
+      - .env
+    environment:
+      TZ: Asia/Jerusalem
+      HOST_LABEL: the NAS
+      SYSINFO_DISK_PATHS: /storage
+      KOKORO_URL: http://kokoro:8880   # free voice (the kokoro service below)
+      KOKORO_VOICE: am_price_inno      # The user picked it from samples (American man)
+      KOKORO_SPEED: "1.2"              # 1.0 sounded too slow to him
+    volumes:
+      - ./data:/app/data
+      - /mnt/storage:/storage:ro
+
+  # Kokoro-FastAPI (github.com/remsky/Kokoro-FastAPI): Enzo's free voice, on the NAS GPU (agent/voice.py, KOKORO_URL).
+  # No port on the LAN: only Enzo's containers reach it, at http://kokoro:8880. Without a GPU: kokoro-fastapi-cpu, no deploy.
+  kokoro:
+    image: ghcr.io/remsky/kokoro-fastapi-gpu:v0.10.0   # pinned: change the tag on purpose to update
+    container_name: enzo-kokoro
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  # FreeLLMAPI (github.com/tashfeenahmed/freellmapi): many free LLM providers behind one OpenAI-style address.
+  # Enzo's last cloud backup (agent/free_brain.py): FREE_LLM_BASE_URL=http://freellmapi:3001/v1, FREE_LLM_MODELS=auto,
+  # FREE_LLM_API_KEY=<the router's unified key>. Dashboard (add provider keys there): http://192.168.1.10:3001
+  # (LAN only, never forwarded on the router; needs its own login, the first-time setup code is in this container's log).
+  freellmapi:
+    profiles: ["freellm"]     # off until COMPOSE_PROFILES=freellm and FREELLM_ENCRYPTION_KEY are in the stack .env
+    image: ghcr.io/tashfeenahmed/freellmapi:v0.16.38   # pinned: change the tag on purpose to update
+    container_name: enzo-freellm
+    restart: unless-stopped
+    environment:                 # no env_file: it must not see Enzo's secrets
+      NODE_ENV: production
+      PORT: 3001
+      ENCRYPTION_KEY: ${FREELLM_ENCRYPTION_KEY}
+    ports:
+      - "3001:3001"
+    volumes:
+      - freellmapi-data:/app/server/data   # named volume: keeps the image's folder owner (a new bind mount is root's)
+
+volumes:
+  freellmapi-data:

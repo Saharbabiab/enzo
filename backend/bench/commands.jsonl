@@ -1,0 +1,144 @@
+{"id":"call-1","category":"phone_call","session":"android","text":"call mom","tool":"phone_call","args":{"who":["mom","mother"]}}
+{"id":"call-2","category":"phone_call","session":"android","text":"ring Ron for me","tool":"phone_call","args":{"who":"ron"}}
+{"id":"call-3","category":"phone_call","session":"android","text":"can you phone my dad please","tool":"phone_call","args":{"who":["dad","father","יוצר"]}}
+{"id":"call-4","category":"phone_call","session":"android","text":"call 0501234567","tool":"phone_call","args":{"number":"0501234567"}}
+{"id":"call-5","category":"phone_call","session":"android","text":"תתקשר לאמא","tool":"phone_call"}
+{"id":"msg-1","category":"phone_message","session":"android","text":"send a whatsapp to Ron that I am running late","tool":"phone_message","args":{"who":"ron","message":"late"}}
+{"id":"msg-2","category":"phone_message","session":"android","text":"text mom I'll be home at 8","tool":"phone_message","args":{"who":["mom","mother"],"message":"8"}}
+{"id":"msg-3","category":"phone_message","session":"android","text":"message Dana: happy birthday!","tool":"phone_message","args":{"who":"dana","message":"birthday"}}
+{"id":"msg-4","category":"phone_message","session":"android","text":"tell my brother on whatsapp that dinner is ready","tool":"phone_message","args":{"who":["brother","השכן"],"message":"dinner"}}
+{"id":"msg-5","category":"phone_message","session":"android","text":"send an sms to 0521112222 saying I arrived","tool":"phone_message","args":{"message":"arrived"}}
+{"id":"msg-6","category":"phone_message","session":"android","text":"write to Noa that the meeting moved to 3","tool":"phone_message","args":{"who":"noa","message":"3"}}
+{"id":"music-1","category":"phone_music","session":"android","text":"play like a stone","tool":"phone_music","args":{"action":"play","query":"like a stone"}}
+{"id":"music-2","category":"phone_music","session":"android","text":"play some queen","tool":"phone_music","args":{"action":"play","query":"queen"}}
+{"id":"music-3","category":"phone_music","session":"android","text":"pause the music","tool":"phone_music","args":{"action":"pause"}}
+{"id":"music-4","category":"phone_music","session":"android","text":"next song","tool":"phone_music","args":{"action":"next"}}
+{"id":"music-5","category":"phone_music","session":"android","text":"put on beat it by michael jackson","tool":"phone_music","args":{"action":"play","query":"beat it"}}
+{"id":"music-6","category":"phone_music","session":"android","text":"connect spotify","tool":"spotify_connect"}
+{"id":"music-now","category":"phone_music","session":"android","text":"what song is this","tool":"phone_music","args":{"action":"now"}}
+{"id":"music-add","category":"phone_music","session":"android","text":"add this song to my gym playlist","tool":"phone_music","args":{"action":"add","query":"gym"}}
+{"id":"set-1","category":"phone_settings","session":"android","text":"set the volume to 50","tool":"phone_settings","args":{"setting":"volume","value":"50"}}
+{"id":"set-2","category":"phone_settings","session":"android","text":"turn the volume up","tool":"phone_settings","args":{"setting":"volume"}}
+{"id":"set-3","category":"phone_settings","session":"android","text":"make the screen brighter","tool":"phone_settings","args":{"setting":"brightness"}}
+{"id":"set-4","category":"phone_settings","session":"android","text":"turn on the flashlight","tool":"phone_settings","args":{"setting":"flashlight"}}
+{"id":"set-5","category":"phone_settings","session":"android","text":"put the phone on silent","tool":"phone_settings","args":{"setting":"ringer"}}
+{"id":"set-6","category":"phone_settings","session":"android","text":"mute my phone","tool":"phone_settings"}
+{"id":"rem-1","category":"reminders","session":"android","text":"remind me to drink water in 10 minutes","tool":"set_reminder","args":{"in_minutes":10,"message":"water"}}
+{"id":"rem-2","category":"reminders","session":"android","text":"remaind me to call mom in 1 min","tool":"set_reminder","args":{"in_minutes":1,"message":"call"}}
+{"id":"rem-3","category":"reminders","session":"android","text":"tell me to go to sleep in 5 minutes","tool":"set_reminder","args":{"in_minutes":5,"message":"sleep"}}
+{"id":"rem-4","category":"reminders","session":"android","text":"wake me up at 7:30","tool":"phone_alarm","args":{"time":"7:30"}}
+{"id":"rem-5","category":"reminders","session":"android","text":"remind me every hour to stretch","tool":"set_reminder","args":{"repeat_every_minutes":60,"message":"stretch"}}
+{"id":"rem-6","category":"reminders","session":"android","text":"send me a notification to take the pills in 30 seconds","tool":"set_reminder","args":{"in_minutes":0.5,"message":"pills"}}
+{"id":"rem-7","category":"reminders","session":"web","text":"what reminders do I have?","tool":"list_reminders"}
+{"id":"rem-8","category":"reminders","session":"web","text":"when is my next reminder","tool":"list_reminders"}
+{"id":"rem-9","category":"reminders","session":"web","text":"cancel the water reminder","tool":"cancel_reminder","args":{"which":"water"}}
+{"id":"rem-10","category":"reminders","session":"web","text":"every morning at 8 tell me if it will rain","tool":"schedule_task","args":{"at_time":"8"}}
+{"id":"rem-11","category":"reminders","session":"android","text":"snooze it 10 minutes","tool":"snooze_reminder","args":{"minutes":10}}
+{"id":"rem-12","category":"reminders","session":"android","text":"I already took the pills today","tool":"reminder_done","args":{"which":"pill"}}
+{"id":"cal-1","category":"calendar","session":"web","text":"what's on my calendar tomorrow","tool":"calendar_events"}
+{"id":"cal-2","category":"calendar","session":"web","text":"do I have any meetings today","tool":"calendar_events"}
+{"id":"cal-3","category":"calendar","session":"web","text":"add dentist tomorrow at 10 to my calendar","tool":"calendar_add_event","args":{"title":"dentist"}}
+{"id":"cal-4","category":"calendar","session":"web","text":"delete my dentist appointment","tool":"calendar_delete_event","args":{"which":"dentist"}}
+{"id":"cal-5","category":"calendar","session":"web","text":"move my 3pm meeting to 4pm","tool":"calendar_update_event","result":{"calendar_events":"Sat 22/11 15:00 — Project meeting\nSat 22/11 18:00 — Dinner with Dana"}}
+{"id":"mail-1","category":"email","session":"web","text":"do I have new email?","tool":"email_inbox"}
+{"id":"mail-2","category":"email","session":"web","text":"check my inbox for anything from the bank","tool":"email_inbox","args":{"query":"bank"}}
+{"id":"mail-3","category":"email","session":"web","text":"send an email to ron@example.com saying the report is ready","tool":"email_send","args":{"to":"ron@example.com"}}
+{"id":"mail-4","category":"email","session":"web","text":"how many emails do I have in total","tool":"gmail_mailbox_stats"}
+{"id":"mail-5","category":"email","session":"web","text":"mark those emails as read","tool":["gmail_mark_read","email_inbox"],"ask_ok":true}
+{"id":"info-1","category":"info","session":"web","text":"what's the weather in Tel Aviv","tool":"get_current_weather","args":{"city_name":"tel aviv"}}
+{"id":"info-2","category":"info","session":"web","text":"what is the price of bitcoin","tool":"get_crypto_price","args":{"coin":"bitcoin"}}
+{"id":"info-3","category":"info","session":"web","text":"what is 17 times 23","tool":["evaluate_math_expression",null]}
+{"id":"info-4","category":"info","session":"web","text":"search the web for the best 4k tv of 2026","tool":"web_search"}
+{"id":"info-5","category":"info","session":"web","text":"how is the air quality in Beer Sheva","tool":"get_air_quality","args":{"city":"beer sheva"}}
+{"id":"info-6","category":"info","session":"web","text":"who won the Maccabi Tel Aviv game last night","tool":["web_search","NEED_SKILL","ask_big_brain"]}
+{"id":"info-7","category":"info","session":"web","text":"give me my daily briefing","tool":"morning_briefing"}
+{"id":"mem-1","category":"memory","session":"web","text":"remember that I like dark roast coffee","tool":"remember"}
+{"id":"mem-2","category":"memory","session":"web","text":"I'm allergic to peanuts, keep that in mind","tool":"remember"}
+{"id":"mem-3","category":"memory","session":"web","text":"my cousin's name is Noa, remember it","tool":"remember","args":{"fact":"noa"}}
+{"id":"pc-1","category":"pc","session":"web","text":"open notepad","tool":"open_app","args":{"name":"notepad"}}
+{"id":"pc-2","category":"pc","session":"web","text":"lock my computer","tool":"lock_pc"}
+{"id":"pc-3","category":"pc","session":"web","text":"pause the music on my PC","tool":"media_control","args":{"action":"pause"}}
+{"id":"pc-4","category":"pc","session":"web","text":"what files are in my downloads folder","tool":"list_files"}
+{"id":"chat-1","category":"chat_no_tool","session":"web","text":"hi enzo","tool":null}
+{"id":"chat-2","category":"chat_no_tool","session":"web","text":"how are you today","tool":null}
+{"id":"chat-3","category":"chat_no_tool","session":"web","text":"tell me a short joke","tool":null}
+{"id":"chat-4","category":"chat_no_tool","session":"web","text":"what is the capital of France","tool":null}
+{"id":"chat-5","category":"chat_no_tool","session":"web","text":"thanks, that's all","tool":null}
+{"id":"chat-6","category":"chat_no_tool","session":"web","text":"who are you","tool":null}
+{"id":"fut-1","category":"future","session":"android","text":"what did I miss on my phone","tool":"read_notifications","future":true,"note":"no such tool yet: phone_intents regex handles it (E-1.3)"}
+{"id":"fut-2","category":"future","session":"android","text":"reply to mom: I am on my way","tool":"phone_reply","future":true,"note":"T-05"}
+{"id":"fut-3","category":"playbook","session":"android","text":"when I say good night, silence the phone and lock the pc","tool":"save_playbook","note":"T-03: a routine taught by voice becomes a playbook"}
+{"id":"brief-1","category":"briefing","session":"android","text":"give me my morning briefing","tool":"morning_briefing"}
+{"id":"brief-2","category":"briefing","session":"android","text":"where is my morning brief","tool":"morning_briefing"}
+{"id":"brief-3","category":"briefing","session":"web","text":"what's my day looking like","tool":["morning_briefing","calendar_events"]}
+{"id":"setup-1","category":"setup","session":"android","text":"let's do the setup, ask me questions to get to know me","tool":"setup_status"}
+{"id":"setup-2","category":"setup","session":"android","text":"my mom's number is 0501234567 and her name is Rina","tool":"save_person","args":{"number":"0501234567"}}
+{"id":"setup-3","category":"setup","session":"android","text":"skip my father, I don't want to answer that","tool":"setup_skip"}
+{"id":"setup-4","category":"setup","session":"android","text":"Let's do a setup, sir.","tool":"setup_status"}
+{"id":"setup-5","category":"setup","session":"android","text":"I want you to learn about me","tool":"setup_status"}
+{"id":"people-1","category":"people","session":"android","text":"let's add my sister and brother too","tool":["pick_contact","setup_status"]}
+{"id":"people-2","category":"people","session":"android","text":"I want to save my boss from my contacts","tool":"pick_contact"}
+{"id":"people-3","category":"people","session":"android","text":"my sister's name is Lior and her number is 0501234500","tool":"save_person","args":{"number":"0501234500"}}
+{"id":"sys-1","category":"system","session":"web","text":"what is my nas status","tool":"system_status"}
+{"id":"sys-2","category":"system","session":"android","text":"is everything ok with the server","tool":"system_status"}
+{"id":"sys-3","category":"system","session":"web","text":"how's the system health","tool":"system_status"}
+{"id":"clock-1","category":"clock","session":"android","text":"set a timer for 3 minutes","tool":"phone_timer"}
+{"id":"clock-2","category":"clock","session":"android","text":"create a timer for 10 sec","tool":"phone_timer"}
+{"id":"clock-3","category":"clock","session":"android","text":"set an alarm for 6 tomorrow morning","tool":"phone_alarm"}
+{"id":"clock-4","category":"clock","session":"android","text":"alarm every weekday at 7 for work","tool":"phone_alarm","args":{"days":"weekday"}}
+{"id":"clock-5","category":"clock","session":"android","text":"remind me to drink water in 1 min and create a timer for 3 min","tool":["set_reminder","phone_timer"]}
+{"id":"multi-1","category":"multi","session":"android","text":"remind me in 1 minute to drink water and set a timer for 2 minutes","tools":["set_reminder","phone_timer"]}
+{"id":"multi-2","category":"multi","session":"android","text":"text mom that I'm running late and then play something calm","tools":["phone_message","phone_music"]}
+{"id":"multi-3","category":"multi","session":"web","text":"what's the weather like and do I have anything on my calendar today","tools":["get_current_weather","calendar_events"]}
+{"id":"multi-4","category":"multi","session":"android","text":"set an alarm for 6:30 tomorrow and remind me at 10 tomorrow night to pack my bag","tools":["phone_alarm","set_reminder"]}
+{"id":"multi-5","category":"multi","session":"web","text":"check my inbox and tell me if I have any reminders waiting","tools":["email_inbox","list_reminders"]}
+{"id":"multi-6","category":"multi","session":"android","text":"turn the volume down to 20 and call dad","tools":["phone_settings","phone_call"]}
+{"id":"fb-1","category":"feedback","session":"web","text":"no that's wrong, that is not what I asked for","history":[{"role":"user","content":"what's on my calendar today"},{"role":"assistant","content":"It is 24 degrees and clear in Beer Sheva, sir."}],"tool":"feedback","args":{"rating":"bad"}}
+{"id":"fb-2","category":"feedback","session":"web","text":"perfect, exactly what I wanted","history":[{"role":"user","content":"set a timer for ten minutes"},{"role":"assistant","content":"Ten minute timer started, sir."}],"tool":"feedback","args":{"rating":"good"}}
+{"id":"stats-1","category":"system","session":"web","text":"how did you do today, any mistakes?","tool":"trace_report"}
+{"id":"hard-1","category":"hard","session":"web","text":"compare the iPhone 17 and the Galaxy S26 in detail and tell me which one I should buy","tool":["ask_big_brain","web_search"]}
+{"id":"hard-2","category":"hard","session":"web","text":"write me a python script that renames all my photos by the date they were taken","tool":"ask_big_brain"}
+{"id":"hard-3","category":"hard","session":"web","text":"plan a five day trip to Rome for me and Dana on a budget of 1500 euros","tool":"ask_big_brain"}
+{"id":"hard-4","category":"hard","session":"web","text":"learn how to check stock prices so you can tell me when Nvidia drops","tool":["ask_big_brain","create_skill"]}
+{"id":"hard-5","category":"hard","session":"web","text":"research the best robot vacuum under 2000 shekels, I have a dog and carpets","tool":["ask_big_brain","web_search"]}
+{"id":"notif-1","category":"phone_notifications","session":"android","text":"what did I miss","tool":"phone_notifications"}
+{"id":"notif-2","category":"phone_notifications","session":"android","text":"did anyone text me while I was out","tool":"phone_notifications"}
+{"id":"notif-3","category":"phone_notifications","session":"android","text":"send a test notification","tool":"phone_notifications","args":{"action":"test"}}
+{"id":"lesson-1","category":"lessons","session":"web","text":"what have you learned so far","tool":["enzo_lessons","recall"],"note":"ambiguous: about him (recall) or rules (enzo_lessons); both are fair"}
+{"id":"lesson-2","category":"lessons","session":"web","text":"from now on when I say play music you start my liked songs","tool":["enzo_lessons","remember","save_playbook"]}
+{"id":"chat-7","category":"chat_no_tool","session":"web","text":"good evening enzo","tool":null}
+{"id":"chat-8","category":"chat_no_tool","session":"web","text":"thanks, that's all for now","tool":null}
+{"id":"mem-4","category":"memory","session":"web","text":"who is my girlfriend","tool":["recall",null]}
+{"id":"pcm-1","category":"pc","session":"web","text":"pause the music","tool":["media_control","phone_music"],"note":"Spotify on the phone can be paused from any device, so both are right"}
+{"id":"wx-1","category":"info","session":"web","text":"what's the weather like today","tool":"get_current_weather"}
+{"id":"pb-1","category":"playbook","session":"android","text":"good night enzo, wake me up at 7","tools":["use_skill","phone_settings","phone_alarm"]}
+{"id":"pb-2","category":"playbook","session":"android","text":"ok I'm heading out","tools":["use_skill","get_current_weather","calendar_events"]}
+{"id":"pb-3","category":"playbook","session":"web","text":"can you plan my day","tools":["use_skill","calendar_events"]}
+{"id":"pb-4","category":"playbook","session":"android","text":"I'm up, start my morning routine","tools":["use_skill","morning_briefing"]}
+{"id":"pb-5","category":"playbook","session":"web","text":"help me pick a robot vacuum under 1500 shekels","tool":"ask_big_brain"}
+{"id":"pb-6","category":"playbook","session":"android","text":"when I say movie time, put the phone on silent and play my liked songs","tool":"save_playbook"}
+{"id":"mem-5","category":"memory","session":"android","text":"note that my car is a white mazda 3","tool":"remember","args":{"fact":"mazda"}}
+{"id":"recall-1","category":"memory","session":"web","text":"what did I tell you about my car","tool":"recall","result":{"recall":"[MEMORY]:\n- The user's car is a white 2019 Mazda 3 (he said, 2026-10-02)"}}
+{"id":"recall-2","category":"memory","session":"android","text":"do you remember where I parked","tool":"recall","result":{"recall":"[MEMORY]:\n- The user parked on level -2, row C (he said, 2026-11-15)"}}
+{"id":"recall-3","category":"memory","session":"android","text":"who is my brother","tool":["recall",null],"result":{"recall":"[MEMORY]:\n- Ron is the user's brother (he said, 2026-09-01)"}}
+{"id":"forget-1","category":"memory","session":"web","text":"forget that I like dark roast coffee, I stopped drinking it","tool":["forget","remember"]}
+{"id":"forget-2","category":"memory","session":"android","text":"forget the population of eilat","tool":"forget"}
+{"id":"recall-4","category":"memory","session":"android","text":"where do I live","tool":["recall",null]}
+{"id": "mem-pref-1", "category": "memory", "session": "android", "text": "liran danino is my favorite Israeli artist", "tool": "remember", "history": [{"role": "user", "content": "I meant liran danino"}, {"role": "assistant", "content": "Playing Liran Danino's top tracks on Spotify, sir."}]}
+{"id":"mem-pref-2","category":"memory","session":"web","text":"my favorite food is shakshuka","tool":"remember"}
+{"id": "mem-pref-3", "category": "memory", "session": "android", "text": "it did play right the first time. im just telling you I like him", "history": [{"role": "user", "content": "I meant liran danino"}, {"role": "assistant", "content": "Playing Liran Danino's top tracks on Spotify, sir."}, {"role": "user", "content": "liran danino is my favorite Israeli artist"}, {"role": "assistant", "content": "I apologize, sir - it seems the music didn't start properly. Let me try opening the Spotify app."}], "tool": "remember"}
+{"id":"chats-1","category":"chats","session":"web","text":"what did I say about the Rome trip last week?","tool":"search_chats","args":{"query":"rome"}}
+{"id":"chats-2","category":"chats","session":"web","text":"when did I last ask you about the weather?","tool":"search_chats","args":{"query":"weather"}}
+{"id":"chats-3","category":"chats","session":"android","text":"did we talk about pizza places?","tool":"search_chats","args":{"query":"pizza"}}
+{"id":"chats-4","category":"chats","session":"web","text":"what was that restaurant you told me about a few days ago","tool":"search_chats"}
+{"id":"chats-5","category":"chats","session":"web","text":"what did you tell me yesterday about my calendar?","tool":"search_chats","args":{"query":"calendar"}}
+{"id":"screen-1","category":"phone_screen","session":"android","popup":true,"text":"what's this","tool":"phone_screen","args":{"action":"read"}}
+{"id":"screen-2","category":"phone_screen","session":"android","popup":true,"text":"what does she want","tool":"phone_screen","args":{"action":"read"}}
+{"id":"screen-3","category":"phone_screen","session":"android","text":"what's on my phone screen right now","tool":"phone_screen","args":{"action":"read"}}
+{"id":"screen-4","category":"phone_screen","session":"android","popup":true,"text":"thanks, that's all","tool":"end_conversation"}
+{"id":"screen-5","category":"phone_screen","session":"android","popup":true,"text":"what's on my screen right now?","tool":"phone_screen","args":{"action":"read"},"not_tools":["look_at_screen"]}
+{"id": "screen-6", "category": "phone_screen", "session": "android", "popup": true, "text": "tap Vision enhancements", "tool": "phone_screen", "args": {"action": "tap"}, "not_tools": ["ask_user"], "result": {"phone_screen": "[SCREEN]: App in front: com.android.settings\n1. [text] Accessibility\n2. [button] Vision enhancements\n3. [button] TalkBack\n4. [button] Installed apps"}}
+{"id":"transit-1","category":"transit","session":"android","text":"when is the next 60 bus","tool":"bus_times","args":{"line":"60"},"result":"Buses near home, line 60:\nline 60 to Beer Sheva central station: 17:50 (timetable) at home (stop 12079)"}
+{"id":"transit-2","category":"transit","session":"android","text":"how do i get to soroka hospital by bus","tool":"plan_route","args":{"to":"soroka"},"result":"Public transport from home to Soroka hospital:\nOption 1: leave 17:47, arrive 18:42 (55 min, 1 change).\n  - bus 60 toward Beer Sheva central station: board at home (stop 12079) at 17:50, get off at Beer Sheva central station at 18:25\n  - bus 7: board at central station at 18:29, get off at Soroka at 18:36"}
+{"id":"transit-3","category":"transit","session":"android","text":"open moovit with directions to ben gurion university","tool":"moovit_route","args":{"to":"ben gurion university"}}
+{"id":"transit-4","category":"transit","session":"android","text":"plan me a route to tel aviv tomorrow at 8 and open it in moovit","tools":["plan_route","moovit_route"]}

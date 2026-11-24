@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- What makes SHARP a "Digital assistant app" choice. Both services must be in this app. -->
+<voice-interaction-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:sessionService="com.enzo.assistant.EnzoVoiceService$Sessions"
+    android:recognitionService="com.enzo.assistant.EnzoRecognitionProxy"
+    android:supportsAssist="true" />

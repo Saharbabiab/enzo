@@ -1,0 +1,28 @@
+# Add these to Enzo's Dockge stack (next to the existing "enzo" service) to give it a code sandbox.
+# Code execution stays OFF until ENABLE_PYTHON_TOOL=true is also set in Enzo's .env.
+#
+# In Enzo's .env:
+#   SANDBOX_URL=http://enzo-sandbox:8800
+#   SANDBOX_TOKEN=<a long random string, the same as below>
+services:
+  enzo-sandbox:
+    build: ./sandbox                    # or: context: https://github.com/<you>/backend.git#main:sandbox
+    environment:
+      SANDBOX_TOKEN: ${SANDBOX_TOKEN}
+    networks: [sandbox]                 # internal only: no internet, no LAN; only Enzo can reach it
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    pids_limit: 64
+    mem_limit: 768m
+    cpus: 1.0
+    restart: unless-stopped
+
+  enzo:
+    networks: [default, sandbox]        # Enzo keeps its normal network and joins the sandbox one
+
+networks:
+  sandbox:
+    internal: true

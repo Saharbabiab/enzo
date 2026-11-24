@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Enzo</string>
+    <string name="title_activity_main">Enzo</string>
+    <string name="package_name">com.enzo.assistant</string>
+    <string name="custom_url_scheme">com.enzo.assistant</string>
+    <string name="accessibility_description">Lets Enzo see and use your screen, only when you ask him: read what is on it, take a screenshot for your question, ring an item to show you where, let you circle something for him, open apps, and tap or type (he asks you before every tap and every typing). It also presses send in WhatsApp, play in Spotify and Start in Moovit right after you asked for it. Nothing is read at any other time.</string>
+</resources>
